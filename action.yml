@@ -1,0 +1,21 @@
+---
+name: 'ghom-ghom'
+description: 'GitHub Organization Manager'
+inputs:
+  ghom_token:
+    description: 'Provide a user GHP (as a secret)'
+    required: true
+  ghom_config:
+    description: 'Provide an alternative path to the ghom config file'
+    required: false
+    default: "/github/workspace/ghom.yaml"
+  ghom_dry:
+    description: 'Enable dry run mode'
+    required: false
+    default: "False"
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/tibeer/ghom:1.0.0'
+branding:
+  color: white
+  icon: users
