@@ -1,0 +1,97 @@
+---
+allow_team_removal: true
+allow_team_repo_removal: true
+allow_team_member_removal: true
+allow_member_removal: true
+allow_label_removal: true
+allow_repository_removal: false
+owners:
+  - tibeer
+members:
+  - tibeerbot
+teams:
+  admins:
+    description: ""
+    private: false
+    maintainers:
+      - tibeerbot
+    members:
+      - tibeerbot
+  maintainers:
+    description: ""
+    private: false
+    maintainers:
+      - tibeerbot
+  ops:
+    description: "Ops team"
+    private: false
+repository_defaults:
+  has_wiki: false
+  has_issues: true
+  has_projects: false
+  has_downloads: false  # no idea, what this sets, cannot find it
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  homepage: ""
+  description: ""
+  private: false
+  default_branch_protection:
+    branch_name: main
+    active: true
+    required_pull_request_review_count: 0  # 1-6, 0 to disable
+    required_pull_request_owner_review: true
+    enforce_admins: false
+    #allow_force_pushes: false  # Not implemented yet in PyGithub
+  default_teams:
+    # permissions can be one of: pull, triage, push, maintain, admin
+    admins: "admin"
+    maintainers: "maintain"
+repositories:
+  .github:
+    archived: false
+    homepage: "https://github.com/ghomtest"
+    default_branch_protection:
+      branch_name: gh_pages
+      active: false
+    labels:
+      - name: documentation
+        description: "overwrite documentation label colors"
+        color: a2ffff
+      - name: addition
+        description: "special label only for this repo"
+        color: a00000
+    teams:
+      ops: "push"
+  ghom:
+  repo02:
+  repo03:
+labels:
+  - name: bug
+    description: "Something isn't working"
+    color: d73a4a
+  - name: documentation
+    description: "Improvements or additions to documentation"
+    color: 0075ca
+  - name: duplicate
+    description: "This issue or pull request already exists"
+    color: cfd3d7
+  - name: enhancement
+    description: "New feature or request"
+    color: a2eeef
+  - name: good first issue
+    description: "Good for newcomers"
+    color: 7057ff
+  - name: help wanted
+    description: "Extra attention is needed"
+    color: 008672
+  - name: invalid
+    description: "This doesn't seem right"
+    color: e4e669
+  - name: question
+    description: "Further information is requested"
+    color: d876e3
+  - name: wontfix
+    description: "This will not be worked on"
+    color: ffffff

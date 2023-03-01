@@ -1,0 +1,26 @@
+---
+allow_team_removal: true
+allow_team_repo_removal: true
+allow_team_member_removal: true
+allow_member_removal: true
+allow_label_removal: true
+allow_repository_removal: false
+owners:
+  - tibeer
+members: []
+teams: []
+repository_defaults:
+  has_wiki: false
+  has_issues: true
+  has_projects: false
+  has_downloads: false
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  homepage: ""
+  description: ""
+  private: false
+repositories:
+  example-repo: []
+labels: []

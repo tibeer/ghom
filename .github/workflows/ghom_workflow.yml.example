@@ -1,0 +1,34 @@
+---
+name: Run GHOM
+
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'ghom.yaml'
+
+jobs:
+  run-ghom:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone current repository
+        uses: actions/checkout@v3
+        # If you use this workflow on a private repository, uncommit this and adapt accordingly
+        #with:
+        #  repository: tibeer/ghom
+        #  token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run ghom
+        uses: tibeer/ghom@main
+        with:
+          ghom_token: ${{ secrets.ghom_token }}
+          # The default path of your ghom config file. Please note that this has to be an
+          # absolute path (/github/workspace is the default path for your checked our repo)
+          #ghom_config: '/github/workspace/ghom.yaml'
+          # Enable debug mode. Do not perform any changes, only print what would be done.
+          # Please note, that this might result in a few errors, because ghom requires
+          # changes to be made for depencies (e.g. team-repos require repos to be available).
+          #ghom_dry: 'False'
